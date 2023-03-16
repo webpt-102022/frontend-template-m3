@@ -1,11 +1,11 @@
-import axios from 'axios';
-import React, { useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { AuthContext } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
+import authService from '../../services/authService';
 
 export default function Login() {
-  const { storeToken, authenticateUser } = useContext(AuthContext);
+  const { storeToken, authenticateUser, isLoggedIn } = useAuth();
   const [user, setUser] = useState({
     email: '',
     password: ''
@@ -22,18 +22,30 @@ export default function Login() {
     })
   }
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, user);
-      toast.success('Welcome back!')
-      storeToken(response.data.authToken);
-      authenticateUser();
-      navigate('/');
+      const response = await authService.login(user)
+      if (response.authToken) {
+        storeToken(response.authToken);
+        authenticateUser();
+        navigate('/');
+        toast.success('Welcome back!')
+      } else {
+        setErrorMessage('Unable to authenticate user')
+      }
     } catch (error) {
-      setErrorMessage(error.response.data.error)
+      setErrorMessage('Unable to authenticate user');
     }
   }
+
+  useEffect(() => {
+    // When the component first renders, check if user is already logged in and redirects
+    if (isLoggedIn) {
+      navigate('/')
+    }
+    // eslint-disable-next-line
+  }, [isLoggedIn])
 
   return (
     <div>

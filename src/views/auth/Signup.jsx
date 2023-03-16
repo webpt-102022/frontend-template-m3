@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import authService from '../../services/authService';
 
 export default function Signup() {
   const [user, setUser] = useState({
@@ -9,7 +9,7 @@ export default function Signup() {
   })
   const [password, setPassword] = useState('');
   const [passwordControl, setPasswordControl] = useState('');
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -27,16 +27,16 @@ export default function Signup() {
     } else {
       setErrorMessage(undefined)
     }
-    // eslint-disable-next-line
-  }, [passwordControl])
+  }, [passwordControl, password])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, { username: user.username, email: user.email, password });
+      await authService.signup({ username: user.username, email: user.email, password });
       navigate('/login');
     } catch (error) {
-      setErrorMessage(error.response.data.error)
+      console.error(error)
+      setErrorMessage('Unable to create user account')
     }
   }
 

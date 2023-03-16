@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
-import axios from 'axios';
+import authService from '../services/authService';
 
 const AuthContext = createContext();
 
@@ -18,16 +18,16 @@ function AuthProviderWrapper(props) {
     localStorage.removeItem('authToken');
   }
 
-  // Function to check if the user is already authenticated or not
+  // Function to check if the user is already authenticated and update the states, accessible from anywhere
   const authenticateUser = async () => {
     setLoading(true);
     const storedToken = localStorage.getItem('authToken');
     if (storedToken) {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/me`, { headers: { Authorization: `Bearer ${storedToken}` } });
+        const response = await authService.me();
         setIsLoggedIn(true);
         setLoading(false);
-        setUser(response.data);
+        setUser(response);
       } catch (error) {
         setIsLoggedIn(false);
         setLoading(false);
@@ -45,6 +45,7 @@ function AuthProviderWrapper(props) {
     authenticateUser();
   }
 
+  // When the app first renders, let's see if the user's session is still active
   useEffect(() => {
     authenticateUser();
   }, []);
