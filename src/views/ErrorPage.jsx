@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function ErrorPage() {
   return (
-    <div>404 - Page not found</div>
+    <div>Ooops something went wrong while fetching the information you requested. Here is an alternative:</div>
   )
 }

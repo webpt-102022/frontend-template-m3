@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import authService from '../../services/authService';
 
 export default function Login() {
-  const { storeToken, authenticateUser, isLoggedIn } = useAuth(); // useContext(AuthContext)
+  const { storeToken, authenticateUser, isLoggedIn } = useAuth(); 
   const [user, setUser] = useState({
     email: '',
     password: ''
