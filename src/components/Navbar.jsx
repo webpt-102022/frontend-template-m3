@@ -15,6 +15,7 @@ export default function Navbar() {
         {isLoggedIn && <li><NavLink to="/private">Private view</NavLink></li>}
         {isLoggedIn && <li><button onClick={() => logOutUser()}>Log out</button></li>}
         <li><button onClick={() => navigate(-1)}>Go back</button></li>
+        
       </ul>
     </div>
   )

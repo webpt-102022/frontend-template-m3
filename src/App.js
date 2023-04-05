@@ -10,6 +10,8 @@ import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 
+import Footer from './components/Footer';
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,7 @@ function App() {
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

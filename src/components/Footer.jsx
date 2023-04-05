@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="footer">
-        <h6>develope by Ricard Montfort - Ironhack 2023</h6>
+        <h6>Develope by Ricard Montfort and TA Marina Altés </h6>
     </div>
   )
 }
