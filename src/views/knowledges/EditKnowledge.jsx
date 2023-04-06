@@ -60,7 +60,7 @@ export default function EditKnowledge() {
                 <input type="text" name="description" required value={knowledge.description} onChange={handleChange} />
                 <label>Knowledge time of activity</label>
                 <input type="number" name="time" required value={knowledge.timeOfActivity} onChange={handleChange} />
-                <select name="type" value={knowledge.type} onChange={handleChange}>
+                <select name="category" value={knowledge.category} onChange={handleChange}>
                     <option value="remote">Remote</option>
                     <option value="in person">In person</option>
                 </select>
