@@ -6,7 +6,7 @@ export default function Card({ knowledge, handleDelete }) {
 
     const handleDeleteKnowledge = () => {
         handleDelete(_id)
-    }
+    };
 
     return (
         <div className="card">
@@ -23,4 +23,4 @@ export default function Card({ knowledge, handleDelete }) {
             <button className="btn" style={{ marginLeft: '10px' }}><Link to={`/edit/${_id}`}>Edit</Link></button>
         </div>
     )
-}
+};

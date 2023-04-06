@@ -6,4 +6,4 @@ export default function Footer() {
         <h6>Develope by Ricard Montfort and TA Marina Altés </h6>
     </div>
   )
-}
+};

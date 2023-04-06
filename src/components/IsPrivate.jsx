@@ -15,6 +15,6 @@ function IsPrivate({ children }) {
     // If the user is logged in, allow to see the page 
     return children;
   }
-}
+};
 
 export default IsPrivate;
