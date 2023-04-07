@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import KnowledgeCard from "../components/KnowledgeCard";
 
-import KnowledgeCard from '../components/KnowledgeCard'
-import SearchInput from '../components/SearchInput';
-import axios from 'axios';
 
 
 
