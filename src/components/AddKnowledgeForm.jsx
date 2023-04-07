@@ -49,6 +49,8 @@ export default function AddKnowledgeForm({ handleAddKnowledge }) {
                     <option value="Animals">Animals</option>
                     <option value="Others"></option>
                 </select>
+                <label>Location</label>
+                <input type="text" name="location" required value={newKnowledge.location} onChange={handleChange} />
                 <button type="submit" className="btn">Create</button>
             </form>
         </div>
