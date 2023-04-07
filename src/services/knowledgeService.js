@@ -7,7 +7,7 @@ class KnowledgeService {
         });
 
         this.api.interceptors.request.use(config => {
-            const storedToken = localStorage.getItem('authToken');
+            const storedToken = localStorage.getItem('authToken'); // 'knowledgeToken?? 
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` };
             }
