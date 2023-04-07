@@ -10,7 +10,7 @@ import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 
-import KnowledgeCard from './components/KnowledgeCard';
+import EditKnowledge from './views/knowledges/EditKnowledge';
 
 import Footer from './components/Footer';
 

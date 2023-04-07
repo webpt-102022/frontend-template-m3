@@ -7,5 +7,5 @@ export const knowledges = [
         "timeOfActivity": "1",
         "location": "Barcelona",
         "description": "Hey! I'm a piano teacher who wants to change my time to try to learn Greek, so We can try to spend are hours and change are knowledge!",
-    },
-]
+    }
+];
