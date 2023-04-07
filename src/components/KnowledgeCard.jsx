@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Card({ knowledge, handleDelete }) {
+export default function KnowledgeCard({ knowledge, handleDelete }) {
     const { category, _id, /* userId? */  title, knowledgeImage, timeOfActivity, location, description  } = knowledge;
 
     const handleDeleteKnowledge = () => {
