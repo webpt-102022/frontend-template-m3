@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// knowledgeService, ReviewService, 
 class AuthService {
   constructor() {
     this.api = axios.create({

@@ -39,7 +39,8 @@ export default function EditKnowledge() {
         e.preventDefault();
         try {
             await authService.editCourse(knowledgeId, knowledge);
-            //await axios.put(`http://localhost:8080/courses/${courseId}`, course)
+            //await axios.put(`http://localhost:8080/courses/${courseId}`, course) Ale
+            //await axios.put(`http://localhost:8080/knowledges/${knowledgeId}`, knowledge) Mine 
             navigate(`/knowledges/${knowledgeId}`)
         } catch (error) {
             console.error(error)
@@ -47,11 +48,10 @@ export default function EditKnowledge() {
     }
 
 
-
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                {error && <p>Something went wrong. Couldn't find your course</p>}
+                {error && <p>Something went wrong. Couldn't find your knowledge</p>}
                 <label>Knowledge title</label>
                 <input type="text" name="title" value={knowledge.title} onChange={handleChange} required />
                 <label>Knowledge image</label>
@@ -61,9 +61,18 @@ export default function EditKnowledge() {
                 <label>Knowledge time of activity</label>
                 <input type="number" name="time" required value={knowledge.timeOfActivity} onChange={handleChange} />
                 <select name="category" value={knowledge.category} onChange={handleChange}>
-                    <option value="remote">Remote</option>
-                    <option value="in person">In person</option>
+                    <option value="Music">Music</option>
+                    <option value="Cooking">Cooking</option>
+                    <option value="Health">Health</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Crafts">Crafts</option>
+                    <option value="Circus">Circus</option>
+                    <option value="Languages">Languages</option>
+                    <option value="Animals">Animals</option>
+                    <option value="Others"></option>
                 </select>
+                <label>Location</label>
+                <input type="text" name="location" required value={knowledge.location} onChange={handleChange} />
                 <button type="submit" className="btn">Save changes</button>
             </form>
         </div>
