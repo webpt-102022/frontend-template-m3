@@ -10,8 +10,9 @@ import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 
-import EditKnowledge from './views/knowledges/EditKnowledge';
 
+import EditKnowledge from './views/knowledges/EditKnowledge';
+import KnowledgeDetail from './views/knowledges/KnowledgeDetail'
 import Footer from './components/Footer';
 
 
@@ -27,6 +28,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="knowledges/:knowledgesId" element={<KnowledgeDetail />} />
+        <Route path="edit/:knowledgeId" element={<EditKnowledge />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
