@@ -6,6 +6,7 @@ export default function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext); 
   const navigate = useNavigate();
   return (
+    <header>
     <div>
       {user && <p>Hello {user.username}</p> }
       <ul>
@@ -17,5 +18,7 @@ export default function Navbar() {
         <li><button onClick={() => navigate(-1)}>Go back</button></li>
       </ul>
     </div>
+    </header>
   )
+  
 };
