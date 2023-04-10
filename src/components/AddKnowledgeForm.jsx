@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function AddKnowledgeForm({ handleAddKnowledge }) {
     const initialState = {
         title: '',
-        knowledgeImage: '',
+        knowledgeImage: 'https://phantom-elmundo.unidadeditorial.es/e301009d308d6b666300c5e8d52ebe39/crop/0x0/2475x1666/resize/700/f/webp/assets/multimedia/imagenes/2021/08/27/16300683348682.jpg',
         description: '',
         timeOfActivity: 1,
         category: 'Music',
@@ -47,7 +47,7 @@ export default function AddKnowledgeForm({ handleAddKnowledge }) {
                     <option value="Circus">Circus</option>
                     <option value="Languages">Languages</option>
                     <option value="Animals">Animals</option>
-                    <option value="Others"></option>
+                    <option value="Others">Others</option>
                 </select>
                 <label>Location</label>
                 <input type="text" name="location" required value={newKnowledge.location} onChange={handleChange} />

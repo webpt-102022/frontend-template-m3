@@ -4,7 +4,7 @@ import AddKnowledgeForm from '../components/AddKnowledgeForm';
 import SearchInput from '../components/SearchInput';
 import knowledgeService from '../services/knowledgeService';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+/*import axios from 'axios';*/
 
 
 export default function Home() {
@@ -80,25 +80,9 @@ const handleDelete = async (knowledgeId) => {
   // setKnowledges(cleanKnowledges);
 }
 
-/*
   return (
-    <div>
-      <h1>Home coBrain</h1>
-    </div>
-  )
-}
-
-*/
-
-
-
-  return (
-  /*<div>
-      <h1>Home coBrain</h1>
-    </div>
-    */
     <>
-      <h1>Home coBrain</h1>
+     <h1>Home coBrain</h1>
       {loading && <p>Loading...</p>}
       {!loading &&
         (<div className="app">
@@ -112,12 +96,13 @@ const handleDelete = async (knowledgeId) => {
           </div>
           {showForm && <AddKnowledgeForm handleAddKnowledge={handleAddKnowledge} />}
           <div className="card_container">
-            {knowledges.filter(elem => elem.title.toLowerCase().includes(searchValue.toLowerCase()) || elem.description.toLowerCase().includes(searchValue.toLowerCase()))
+              {knowledges.filter(elem => elem.title.toLowerCase().includes(searchValue.toLowerCase()) || elem.description.toLowerCase().includes(searchValue.toLowerCase()))
               .map(elem => {
-                return <KnowledgeCard key={elem._id} course={elem} handleDelete={handleDelete} />
+                return <KnowledgeCard key={elem._id} knowledge={elem} handleDelete={handleDelete} />
             })}
-          </div>
+         </div>
         </div>)}
+        
     </>
   );
 } 

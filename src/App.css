@@ -45,10 +45,18 @@ div.card ul {
 
 button.btn {
   border: none;
-  background-color: chocolate;
+  background-color: rgb(202, 50, 244); 
   padding: 10px 15px;
   border-radius: 25px;
-  color: white;
+  color: rgb(152, 249, 95); 
+}
+
+button {
+  border: none;
+  background-color: rgb(50, 244, 111); 
+  padding: 5px 5px;
+  border-radius: 25px;
+  color: rgb(243, 9, 192); 
 }
 
 /***************** FORM *******************/
@@ -63,7 +71,7 @@ div.form_container input[type='text'],
 div.form_container input[type='number'],
 div.form_container select {
   border: none;
-  border-bottom: 1px solid lightblue;
+  border-bottom: 1px solid rgb(0, 151, 201);
   width: 100%;
   margin: 10px 0;
   padding: 5px 0;
@@ -109,6 +117,10 @@ ul.nav {
   color: chocolate;
 }
 
+
+div.footer{
+  color: rgb(134, 0, 53);
+}
 .active {
   color: lightskyblue;
   text-decoration: underline;

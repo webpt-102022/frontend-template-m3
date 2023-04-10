@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import KnowledgeCard from '../components/KnowledgeCard';
-import { knowledges } from '../../data';
+import KnowledgeCard from '../../components/KnowledgeCard';
+/*import { knowledges } from '../../data';  */
 import knowledgeService from '../../services/knowledgeService';
 
 export default function KnowledgeDetail() {
-    const { knowledgeId } = useParams();
+    const { knowledgesId } = useParams();
     const [knowledge, setKnowledge] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    console.log(knowledgeId)
 
     const getKnowledge = async () => {
         try {
-            const response = await knowledgeService.getKnowledge(knowledgeId);
+            const response = await knowledgeService.getKnowledge(knowledgesId);
             setLoading(false);
             setKnowledge(response);
             setError(false);
@@ -28,12 +27,12 @@ export default function KnowledgeDetail() {
     useEffect(() => {
         getKnowledge();
         // eslint-disable-next-line
-    }, [knowledgeId])
+    }, [knowledgesId])
 
     return (
         <div>
             {loading && <p>Loading...</p>}
-            {!loading && knowledge && <KnowledgeCard course={knowledge} />}
+            {!loading && knowledge && <KnowledgeCard knowledge={knowledge} />}
             {error && <p>Something went wrong. Couldn't find your knowledge</p>}
         </div>
     )

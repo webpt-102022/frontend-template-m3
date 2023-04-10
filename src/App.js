@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+/*import { Toaster } from 'react-hot-toast'; */
 import Home from './views/Home';
 import Navbar from './components/Navbar';
 import ErrorPage from './views/ErrorPage';
@@ -20,7 +20,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
-      <Toaster/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,8 +27,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
         <Route path="/error" element={<ErrorPage />} />
-        <Route path="knowledges/:knowledgesId" element={<KnowledgeDetail />} />
-        <Route path="edit/:knowledgeId" element={<EditKnowledge />} />
+        <Route path="/knowledges/:knowledgesId" element={<KnowledgeDetail />} />
+        <Route path="/edit/:knowledgeId" element={<EditKnowledge />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

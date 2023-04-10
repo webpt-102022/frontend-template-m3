@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import authService from '../../services/authService';
+/*import authService from '../../services/authService'; */
+import knowledgeService from '../../services/knowledgeService';
 import axios from 'axios';
 
 export default function EditKnowledge() {
@@ -11,7 +12,7 @@ export default function EditKnowledge() {
 
     const getKnowledge = async () => {
         try {
-            const response = await authService.getKnowledge(knowledgeId);
+            const response = await knowledgeService.getKnowledge(knowledgeId); 
             setKnowledge(response);
             setError(false);
             console.log(response);
@@ -38,9 +39,9 @@ export default function EditKnowledge() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await authService.editCourse(knowledgeId, knowledge);
+            await knowledgeService.editKnowledge(knowledgeId, knowledge); 
             //await axios.put(`http://localhost:8080/courses/${courseId}`, course) Ale
-            //await axios.put(`http://localhost:8080/knowledges/${knowledgeId}`, knowledge) Mine 
+            await axios.put(`http://localhost:8080/knowledges/${knowledgeId}`, knowledge)  
             navigate(`/knowledges/${knowledgeId}`)
         } catch (error) {
             console.error(error)
