@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 export default function AddKnowledgeForm({ handleAddKnowledge }) {
     const initialState = {
         title: '',
-        knowledgeImage: 'https://phantom-elmundo.unidadeditorial.es/e301009d308d6b666300c5e8d52ebe39/crop/0x0/2475x1666/resize/700/f/webp/assets/multimedia/imagenes/2021/08/27/16300683348682.jpg',
+        knowledgeImage: '',
         description: '',
-        timeOfActivity: 1,
+        timeOfActivity: '',
         category: 'Music',
         location:'',
     };

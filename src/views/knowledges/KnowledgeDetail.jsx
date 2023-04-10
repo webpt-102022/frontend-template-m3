@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import KnowledgeCard from '../../components/KnowledgeCard';
-/*import { knowledges } from '../../data';  */
+//import { knowledge } from '../../data';  
 import knowledgeService from '../../services/knowledgeService';
 
 export default function KnowledgeDetail() {

@@ -14,9 +14,9 @@ console.log(knowledge._id)
             <img src={knowledgeImage} alt={title} />
             <p>{description}</p>
             <ul>
-                <li>Time: {timeOfActivity}$</li>
-                <li>Location {location}</li>
-                <li>Category of Knowledge: {category}</li>
+                <li>Time: {timeOfActivity}h</li>
+                <li>Location: {location}</li>
+                <li>Knowledge: {category}</li>
             </ul>
             <button className="btn"><Link to={`/knowledges/${_id}`}>See more</Link></button>
             <button className="btn" style={{ marginLeft: '10px' }} onClick={handleDeleteKnowledge}>Delete</button>

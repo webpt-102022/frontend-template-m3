@@ -50,7 +50,7 @@ export default function EditKnowledge() {
 
 
     return (
-        <div>
+        <div className="form_container">
             <form onSubmit={handleSubmit}>
                 {error && <p>Something went wrong. Couldn't find your knowledge</p>}
                 <label>Knowledge title</label>
