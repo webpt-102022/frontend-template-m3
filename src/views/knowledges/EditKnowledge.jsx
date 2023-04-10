@@ -56,11 +56,11 @@ export default function EditKnowledge() {
                 <label>Knowledge title</label>
                 <input type="text" name="title" value={knowledge.title} onChange={handleChange} required />
                 <label>Knowledge image</label>
-                <input type="text" name="image" required value={knowledge.knowledgeImage} onChange={handleChange} />
+                <input type="text" name="knowledgeImage" required value={knowledge.knowledgeImage} onChange={handleChange} />
                 <label>Knowledge description</label>
                 <input type="text" name="description" required value={knowledge.description} onChange={handleChange} />
                 <label>Knowledge time of activity in hours</label>
-                <input type="number" name="time" required value={knowledge.timeOfActivity} onChange={handleChange} />
+                <input type="number" name="timeOfActivity" required value={knowledge.timeOfActivity} onChange={handleChange} />
                 <select name="category" value={knowledge.category} onChange={handleChange}>
                     <option value="Music">Music</option>
                     <option value="Cooking">Cooking</option>
