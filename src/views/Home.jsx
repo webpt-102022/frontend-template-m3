@@ -47,7 +47,7 @@ export default function Home() {
 const handleAddKnowledge = async (newKnowledgeData) => {
   try {
     const newKnowledge = await knowledgeService.createKnowledge(newKnowledgeData);
-    //const newKnowledge = await axios.post('http://localhost:8080/knowledges', newKnowledgeData);
+    //const newKnowledge = await axios.post('http://localhost:8080/knowledges/${knowledgeId}', newKnowledgeData);
     navigate(`/knowledges/${newKnowledge._id}`)
   } catch (error) {
     console.error(error)
@@ -92,7 +92,7 @@ const handleDelete = async (knowledgeId) => {
           <div className="action_container">
             <button className="btn" onClick={handleSortByTime}>Sort by Time</button>
             <button className="btn" onClick={handleFilterCategory}>Show only Music</button>
-            <button className="btn" onClick={handleShowKnowledge}>{showForm ? 'Hide' : 'Show'}</button>
+            <button className="btn" onClick={handleShowKnowledge}>{showForm ? 'public' : '+'}</button>
           </div>
           {showForm && <AddKnowledgeForm handleAddKnowledge={handleAddKnowledge} />}
           <div className="card_container">

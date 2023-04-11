@@ -5,7 +5,8 @@ import authService from '../../services/authService';
 export default function Signup() {
   const [user, setUser] = useState({
     username: '',
-    email: ''
+    email: '',
+    profileImage: ''
   })
   const [password, setPassword] = useState('');
   const [passwordControl, setPasswordControl] = useState('');
@@ -32,7 +33,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authService.signup({ username: user.username, email: user.email, password });
+      await authService.signup({ username: user.username, email: user.email, password, profileImage: user.profileImage });
       navigate('/login');
     } catch (error) {
       console.error(error)
@@ -52,6 +53,8 @@ export default function Signup() {
         <label>Repeat the password</label>
         <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        <label>profile Image</label>
+        <input type="image" alt='' name="profileImage" value={user.profileImage} onChange={handleChange}/>
         <button type="submit">Register</button>
       </form>
     </div>

@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function KnowledgeCard({ knowledge, handleDelete }) {
-    const { category, _id,  userId,  title, knowledgeImage, timeOfActivity, location, description  } = knowledge;
+    const { category, _id,  /*userId*/ title, knowledgeImage, timeOfActivity, location, description  } = knowledge;
 console.log(knowledge._id)
     const handleDeleteKnowledge = () => {
-        handleDelete(/*_id*/userId)
+        handleDelete(_id /*userId*/)
     };
 
     return (
