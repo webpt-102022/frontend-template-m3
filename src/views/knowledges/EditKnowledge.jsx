@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, NavLink } from 'react-router-dom'
 /*import authService from '../../services/authService'; */
 import knowledgeService from '../../services/knowledgeService';
 import axios from 'axios';
@@ -43,6 +43,7 @@ export default function EditKnowledge() {
             //await axios.put(`http://localhost:8080/courses/${courseId}`, course) Ale
             await axios.put(`http://localhost:8080/knowledges/${knowledgeId}`, knowledge)  
             navigate(`/knowledges/${knowledgeId}`)
+            // toast 
         } catch (error) {
             console.error(error)
         }
@@ -74,7 +75,9 @@ export default function EditKnowledge() {
                 </select>
                 <label>Location</label>
                 <input type="text" name="location" required value={knowledge.location} onChange={handleChange} />
-                <button type="submit" className="btn">Save changes</button>
+                <label>Contact me:</label>
+                <input type="text" name="contactMe" required value={knowledge.contactMe} onChange={handleChange} />
+                <button type="submit" className="btn"><NavLink to="/">Save changes</NavLink></button> 
             </form>
         </div>
     )

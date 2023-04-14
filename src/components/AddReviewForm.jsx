@@ -1,15 +1,12 @@
+/*
 import React, { useState } from 'react'
 //import { NavLink } from 'react-router-dom';
 //<NavLink to="/">Create</NavLink>
-export default function AddKnowledgeForm({ handleAddKnowledge }) {
+export default function AddReviewForm({ handleAddKnowledge }) {
     const initialState = {
-        title: '',
-        knowledgeImage: '',
-        description: '',
-        timeOfActivity: '',
-        category: 'Music',
-        location:'',
-        contactMe:'',
+        imageUrl: "",
+        title: "",
+        description: "",
     };
 
     const [newKnowledge, setNewKnowledge] = useState(initialState);
@@ -53,10 +50,10 @@ export default function AddKnowledgeForm({ handleAddKnowledge }) {
                 </select>
                 <label>Location</label>
                 <input type="text" name="location" required value={newKnowledge.location} onChange={handleChange} />
-                <label>Contact Me</label>
-                <input type="text" name="contactMe" required value={newKnowledge.contactMe} onChange={handleChange} />
                 <button type="submit" className="btn">Create</button> 
             </form>
         </div>
     )
 };
+
+*/

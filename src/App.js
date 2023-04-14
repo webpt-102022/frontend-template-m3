@@ -15,6 +15,9 @@ import EditKnowledge from './views/knowledges/EditKnowledge';
 import KnowledgeDetail from './views/knowledges/KnowledgeDetail'
 import Footer from './components/Footer';
 
+import EditUser from './views/users/EditUser';
+import UserDetail from './views/users/UserDetail';
+
 
 
 function App() {
@@ -29,6 +32,10 @@ function App() {
         <Route path="/error" element={<ErrorPage />} />
         <Route path="/knowledges/:knowledgesId" element={<KnowledgeDetail />} />
         <Route path="/edit/:knowledgeId" element={<EditKnowledge />} />
+
+        <Route path="/private/:usersId" element={<IsPrivate><UserDetail /></IsPrivate>} />
+        <Route path="/private/edit/:userId" element={<IsPrivate><EditUser /></IsPrivate>} />
+
 
         <Route path="*" element={<NotFound />} />
       </Routes>

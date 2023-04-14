@@ -5,8 +5,7 @@ import authService from '../../services/authService';
 export default function Signup() {
   const [user, setUser] = useState({
     username: '',
-    email: '',
-    profileImage: ''
+    email: ''
   })
   const [password, setPassword] = useState('');
   const [passwordControl, setPasswordControl] = useState('');
@@ -53,8 +52,6 @@ export default function Signup() {
         <label>Repeat the password</label>
         <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <label>profile Image</label>
-        <input type="image" alt='' name="profileImage" value={user.profileImage} onChange={handleChange}/>
         <button type="submit">Register</button>
       </form>
     </div>

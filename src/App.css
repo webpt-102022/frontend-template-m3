@@ -7,10 +7,25 @@
 /***************** HEADER *****************/
 
 header {
-  background-color: chocolate;
+  display:flex;
+  justify-content: space-between;
+  background-color: rgb(126, 210, 30);
   color: beige;
-  text-align: center;
-  padding: 20px 0;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.Header .nav-links{
+  list-style: none;
+}
+
+.Header .nav-links li{
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.Header .nav-links li:hover{
+  transform: scale(1.1);
 }
 
 /***************** CARDS *****************/

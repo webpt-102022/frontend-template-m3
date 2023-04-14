@@ -82,7 +82,7 @@ const handleDelete = async (knowledgeId) => {
 
   return (
     <>
-     <h1>Home coBrain</h1>
+      <h1>Welcome to CoBrain</h1>
       {loading && <p>Loading...</p>}
       {!loading &&
         (<div className="app">
@@ -96,13 +96,15 @@ const handleDelete = async (knowledgeId) => {
           </div>
           {showForm && <AddKnowledgeForm handleAddKnowledge={handleAddKnowledge} />}
           <div className="card_container">
-              {knowledges.filter(elem => elem.title.toLowerCase().includes(searchValue.toLowerCase()) || elem.description.toLowerCase().includes(searchValue.toLowerCase()))
+              {knowledges.filter(elem => elem.title.toLowerCase().includes(searchValue.toLowerCase()) 
+              || elem.category.toLowerCase().includes(searchValue.toLowerCase()) 
+              || elem.location.toLowerCase().includes(searchValue.toLowerCase())
+                )
               .map(elem => {
                 return <KnowledgeCard key={elem._id} knowledge={elem} handleDelete={handleDelete} />
             })}
-         </div>
+          </div>
         </div>)}
-        
     </>
   );
 } 
