@@ -20,7 +20,6 @@ export default function KnowledgeCard({ knowledge, handleDelete }) {
                 <li>Knowledge: {category}</li>
                 <li>Contact me: {contactMe}</li>
             </ul>
-            <button className="btn"><Link to={`/knowledges/${_id}`}>See more</Link></button>
             {user._id === userId && <button className="btn" style={{ marginLeft: '10px' }} onClick={handleDeleteKnowledge}>Delete</button>}
             {user._id === userId && <button className="btn" style={{ marginLeft: '10px' }}><Link to={`/edit/${_id}`}>Edit</Link></button>}       
         </div>

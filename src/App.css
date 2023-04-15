@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  color: black;
 }
 
 /***************** HEADER *****************/
@@ -16,21 +18,25 @@ header {
 
 .Header .nav-links{
   list-style: none;
+  text-decoration: none;
 }
 
 .Header .nav-links li{
   display: inline-block;
   padding: 0 10px;
+  text-decoration: none;
 }
 
 .Header .nav-links li:hover{
   transform: scale(1.1);
+  text-decoration: none;
 }
 
 /***************** CARDS *****************/
 
 div.card_container {
   padding: 70px;
+  text-decoration: none;
 }
 
 div.action_container {
@@ -44,6 +50,8 @@ div.card {
   padding: 70px;
   margin-bottom: 20px;
   border-radius: 25px;
+  text-decoration: none;
+  color: black;
 }
 
 div.card img {
@@ -63,7 +71,8 @@ button.btn {
   background-color: rgb(217, 133, 240); 
   padding: 10px 15px;
   border-radius: 25px;
-  color: rgb(152, 249, 95); 
+  color: rgb(0, 0, 0); 
+  text-decoration: none;
 }
 
 button {
@@ -71,7 +80,8 @@ button {
   background-color: rgb(50, 244, 111); 
   padding: 5px 5px;
   border-radius: 25px;
-  color: rgb(232, 108, 205); 
+  color: rgb(0, 0, 0); 
+  text-decoration: none;
 }
 
 /***************** FORM *******************/
@@ -138,5 +148,10 @@ div.footer{
 }
 .active {
   color: lightskyblue;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+div.form-container.button{
+  text-decoration: none;
+  color: black;
 }
