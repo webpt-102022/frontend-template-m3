@@ -8,7 +8,6 @@ export default function Navbar() {
   return (
     <header>
     <div className='Header'>
-      
       <ul className='nav-links'>
         <li><NavLink to="/">Home</NavLink></li>
         {!isLoggedIn && <li><NavLink to="/signup">Sign up</NavLink></li>}

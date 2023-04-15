@@ -11,7 +11,7 @@ export default function KnowledgeCard({ knowledge, handleDelete }) {
 
     return (
         <div className="card">
-            <h3>{title}</h3>
+            <h2>{title}</h2>
             <img src={knowledgeImage} alt={title} />
             <p>{description}</p>
             <ul>
@@ -22,8 +22,7 @@ export default function KnowledgeCard({ knowledge, handleDelete }) {
             </ul>
             <button className="btn"><Link to={`/knowledges/${_id}`}>See more</Link></button>
             {user._id === userId && <button className="btn" style={{ marginLeft: '10px' }} onClick={handleDeleteKnowledge}>Delete</button>}
-            {user._id === userId && <button className="btn" style={{ marginLeft: '10px' }}><Link to={`/edit/${_id}`}>Edit</Link></button>}
-            
+            {user._id === userId && <button className="btn" style={{ marginLeft: '10px' }}><Link to={`/edit/${_id}`}>Edit</Link></button>}       
         </div>
     )
 };

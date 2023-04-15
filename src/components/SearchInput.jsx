@@ -1,9 +1,7 @@
 import React from 'react'
 
 export default function SearchInput(props) {
-
     const { handleSearchValue } = props;
-
     const handleChange = (e) => {
         handleSearchValue(e.target.value)
     };

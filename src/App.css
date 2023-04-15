@@ -9,8 +9,7 @@
 header {
   display:flex;
   justify-content: space-between;
-  background-color: rgb(126, 210, 30);
-  color: beige;
+  background-color: rgb(149, 230, 56);
   align-items: center;
   padding: 5px 10px;
 }
@@ -31,25 +30,26 @@ header {
 /***************** CARDS *****************/
 
 div.card_container {
-  padding: 20px;
+  padding: 70px;
 }
 
 div.action_container {
-  padding: 20px 0 0 20px;
+  padding: 20px 20px 20px 20px;
   display: flex;
   gap: 20px;
 }
 
 div.card {
-  background-color: rgb(242, 242, 242);
-  padding: 20px;
+  background-color: rgb(208, 238, 187);
+  padding: 70px;
   margin-bottom: 20px;
   border-radius: 25px;
 }
 
 div.card img {
-  width: 100%;
-  margin: 10px 0;
+  display: center;
+  width: 80%;
+  margin: 10px 10px;
 }
 
 div.card ul {
@@ -60,7 +60,7 @@ div.card ul {
 
 button.btn {
   border: none;
-  background-color: rgb(202, 50, 244); 
+  background-color: rgb(217, 133, 240); 
   padding: 10px 15px;
   border-radius: 25px;
   color: rgb(152, 249, 95); 
@@ -71,7 +71,7 @@ button {
   background-color: rgb(50, 244, 111); 
   padding: 5px 5px;
   border-radius: 25px;
-  color: rgb(243, 9, 192); 
+  color: rgb(232, 108, 205); 
 }
 
 /***************** FORM *******************/

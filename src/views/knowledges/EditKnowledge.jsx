@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate, NavLink } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 /*import authService from '../../services/authService'; */
 import knowledgeService from '../../services/knowledgeService';
 import axios from 'axios';
@@ -71,13 +71,13 @@ export default function EditKnowledge() {
                     <option value="Circus">Circus</option>
                     <option value="Languages">Languages</option>
                     <option value="Animals">Animals</option>
-                    <option value="Others"></option>
+                    <option value="Others">Others</option>
                 </select>
                 <label>Location</label>
                 <input type="text" name="location" required value={knowledge.location} onChange={handleChange} />
                 <label>Contact me:</label>
                 <input type="text" name="contactMe" required value={knowledge.contactMe} onChange={handleChange} />
-                <button type="submit" className="btn"><NavLink to="/">Save changes</NavLink></button> 
+                <button type="submit" className="btn">Save changes</button> 
             </form>
         </div>
     )
