@@ -1,3 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+:root {
+  --background-green-header: rgb(149, 230, 56);
+  --color-purple-button: rgb(217, 133, 240);
+  --color-green-card: ;
+  --color-green-button: rgb(36, 247, 103);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+
+/***************** HEADER *****************/
+
+header {
+  display:flex;
+  justify-content: space-between;
+  background-color: var(--background-green-header);
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.nav-links{
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-links li{
+  display: inline-block;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.nav-links li:hover{
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+.nav-links li button {
+  cursor: pointer;
+  transition: color 0.3s; /* Agrega una transición suave para el cambio de color */
+}
+
+.nav-links li button.purple {
+  color: var(--color-purple-button)
+}
+
+/***************** CARDS *****************/
+
+.card_container {
+  padding: 70px;
+  text-decoration: none;
+}
+
+.action_container {
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+
+.card img {
+  display: center;
+  width: 80%;
+  margin: 10px 10px;
+}
+
+.card ul {
+  margin: 10px 0 10px 30px;
+}
+
+/***************** BUTTONS *****************/
+
+button.btn {
+  border: none;
+  background-color: var(--color-purple-button); 
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: rgb(0, 0, 0); 
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  transform: scale(1.1);
+}
+
+button {
+  border: none;
+  background-color: var(--color-green-button); 
+  padding: 5px 5px;
+  border-radius: 25px;
+  color: rgb(0, 0, 0); 
+  text-decoration: none;
+  transition: color 0.3s
+}
+
+button.purple {
+  color: purple;
+}
+
+/***************** FORM *******************/
+
+.form_container input,
+.form_container label,
+.form_container select {
+  display: block;
+}
+
+.form_container input[type='text'],
+.form_container input[type='number'],
+.form_container select {
+  border: none;
+  border-bottom: 1px solid rgb(13, 101, 138);
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px 0;
+}
+
+.form_container {
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.checkbox_container {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+/***************** SEARCH *****************/
+
+.search_container {
+  padding: 20px 20px 0 20px;
+}
+
+.search_container input[type="text"] {
+  border: none;
+  border-bottom: 1px solid lightblue;
+  width: 100%;
+  padding: 5px;
+}
+
+ul.nav {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+ul.nav {
+  list-style-type: none;
+}
+
+
+.footer{
+  background-color: rgb(134, 0, 53);
+}
 .active {
-  color: green;
+  color: rgb(37, 119, 170);
+  text-decoration: none;
+}
+
+
+.card {
+  background-color: rgb(208, 238, 187);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 10px; 
+}
+
+.card-header {
+  padding: 15px;
+  background-color: var(--background-green-header);
+  color: white;
+  text-align: center;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-metadata {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-metadata li {
+  flex: 1 1 45%; /* Ajusta el ancho de los elementos en pantallas más pequeñas */
+  margin: 5px 0;
+}
+
+.card-actions {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 1px;
+  }
 }

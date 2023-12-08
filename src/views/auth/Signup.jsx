@@ -32,7 +32,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authService.signup({ username: user.username, email: user.email, password });
+      await authService.signup({ username: user.username, email: user.email, password, profileImage: user.profileImage });
       navigate('/login');
     } catch (error) {
       console.error(error)
@@ -41,7 +41,7 @@ export default function Signup() {
   }
 
   return (
-    <div>
+    <div className="form_container">
       <form onSubmit={handleSubmit}>
         <label>Username</label>
         <input required type="text" name="username" value={user.username} onChange={handleChange} />

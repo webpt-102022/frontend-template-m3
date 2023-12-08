@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// knowledgeService, ReviewService, 
 class AuthService {
   constructor() {
     this.api = axios.create({
@@ -13,20 +13,20 @@ class AuthService {
       }
       return config;
     });
-  }
+  };
 
   signup(body) {
     return this.api.post('/signup', body).then(({ data }) => data);
-  }
+  };
 
   login(user) {
     return this.api.post('/login', user).then(({ data }) => data);
-  }
+  };
 
   me() {
     return this.api.get('/me').then((response) => response.data);
-  }
-}
+  };
+};
 
 const authService = new AuthService();
 
