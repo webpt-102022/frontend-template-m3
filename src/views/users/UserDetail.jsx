@@ -27,7 +27,7 @@ export default function UserDetail() {
     useEffect(() => {
         getUser();
         // eslint-disable-next-line
-    }, [knowledgesId])
+    }, [userId])
 
     return (
         <div>

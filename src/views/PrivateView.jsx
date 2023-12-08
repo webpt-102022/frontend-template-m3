@@ -53,7 +53,7 @@ export default function PrivateView() {
 */
 
 
-
+/* 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import IsPrivate from '../components/IsPrivate';
@@ -79,24 +79,69 @@ export default function PrivateView() {
       
   return (
     <div className='userProfile'>
-    <IsPrivate />
-    
+      <IsPrivate />
       {!user && <p>Loading...</p>}
       {user && (
         <div className='profileData'>
-        
-          <h1> Hello {user.username}</h1>
+          <h1>{user.username}</h1>
           <p>my perfil</p>
           <div>
             <img src={user.profileImage} alt={user.profileImage}/>
           </div>
           <div>
-          <p>Contact me: {user.email}</p>
+            <p>Contact me: {user.email}</p>
+            <p>City: {user.city}</p>
+            <p>Country: {user.country}</p>
           </div>
-          <NavLink to={`/private/edit/${user._id}`}>Edit profile</NavLink>
+          <button className='btn'><NavLink to={`/private/edit/${user._id}`}>Edit profile</NavLink></button>
         </div>
       ) }
     </div>
   )
 }
+*/
 
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import IsPrivate from '../components/IsPrivate';
+import userService from '../services/userService';
+import UserCard from '../components/UserCard';
+
+export default function PrivateView() {
+    const storedToken = localStorage.getItem('authToken');
+    const [user, setUser] = useState("");
+
+    // GET USER DATA 
+    useEffect(() => {
+        const getData = async () => {
+          try {
+            const user = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/auth/me`, { headers: { Authorization: `Bearer ${storedToken}` } });
+            setUser(user.data);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        getData();
+    }, [storedToken]);
+
+    const handleDeleteUser = async (userId) => {
+        try {
+            await userService.deleteUser(userId);
+            // Puedes realizar alguna acción adicional después de eliminar al usuario, si es necesario
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    return (
+        <div className='userProfile'>
+            <IsPrivate />
+            {!user && <p>Loading...</p>}
+            {user && (
+                <div>
+                    <UserCard user={user} handleDelete={handleDeleteUser} />
+                </div>
+            )}
+        </div>
+    );
+}

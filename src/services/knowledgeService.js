@@ -28,7 +28,10 @@ class KnowledgeService {
     };
 
     editKnowledge(id, body) {
-        return this.api.put(`/${id}`, body).then(({ data }) => data).catch(err => console.error(err))
+        return this.api
+        .put(`/${id}`, body)
+        .then(({ data }) => data)
+        .catch(err => console.error(err))
     };
 
     deleteKnowledge(id) {

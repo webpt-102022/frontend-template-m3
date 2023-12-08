@@ -41,7 +41,11 @@ export default function AddUserForm({ handleAddUser }) {
                 <input type="text" name="city" required value={newUser.city} onChange={handleChange} />
                 <label>Contact Me:</label>
                 <input type="text" name="contactInfo" required value={newUser.contactInfo} onChange={handleChange} />
-                <button type="submit" className="btn">Create</button> 
+                <label>Description:</label>
+                <input type="text" name="description" required value={newUser.description} onChange={handleChange} />
+                <button type="submit" className="btn">
+                    Create
+                </button> 
             </form>
         </div>
     )

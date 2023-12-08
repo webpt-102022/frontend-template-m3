@@ -3,7 +3,7 @@ import axios from "axios"
 class UserService {
     constructor() {
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_BACKEND_URL}/private`
+            baseURL: `${process.env.REACT_APP_BACKEND_URL}/users`
         });
 
         this.api.interceptors.request.use(config => {
@@ -16,11 +16,17 @@ class UserService {
     };
 
     getUsers() {
-        return this.api.get('/').then(({ data }) => data).catch(err => console.error(err))
+        return this.api
+            .get('/')
+            .then(({ data }) => data)
+            .catch(err => console.error(err))
     };
 
     getUser(id) {
-        return this.api.get(`/${id}`).then(({ data }) => data).catch(err => console.error(err))
+        return this.api
+        .get(`/${id}`)
+        .then(({ data }) => data)
+        .catch(err => console.error(err))
     };
 
     /*createReview(body) {
@@ -28,12 +34,18 @@ class UserService {
     }; 
     */
 
-    editUser(id, user) {
-        return this.api.put(`/${id}`, user).then(({ data }) => data).catch(err => console.error(err))
+    editUser(id, body) { // Anteriormente (id, user) !!!!
+        return this.api
+        .put(`/${id}`, body) // Anteriormente (`/edit/${id}`, user) !!!!
+        .then(({ data }) => data)
+        .catch(err => console.error(err))
     };
 
     deleteUser(id, user) {
-        return this.api.delete(`/${id}`, user).then(({ data }) => data).catch(err => console.error(err))
+        return this.api
+        .delete(`/${id}`, user)
+        .then(({ data }) => data)
+        .catch(err => console.error(err))
     };
 
   // async getKnowledges2() {

@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+:root {
+  --background-green-header: rgb(149, 230, 56);
+  --color-purple-button: rgb(217, 133, 240);
+  --color-green-card: ;
+  --color-green-button: rgb(36, 247, 103);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -11,56 +20,57 @@
 header {
   display:flex;
   justify-content: space-between;
-  background-color: rgb(149, 230, 56);
+  background-color: var(--background-green-header);
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
 
-.Header .nav-links{
+.nav-links{
   list-style: none;
   text-decoration: none;
 }
 
-.Header .nav-links li{
+.nav-links li{
   display: inline-block;
   padding: 0 10px;
   text-decoration: none;
 }
 
-.Header .nav-links li:hover{
+.nav-links li:hover{
   transform: scale(1.1);
   text-decoration: none;
 }
 
+.nav-links li button {
+  cursor: pointer;
+  transition: color 0.3s; /* Agrega una transición suave para el cambio de color */
+}
+
+.nav-links li button.purple {
+  color: var(--color-purple-button)
+}
+
 /***************** CARDS *****************/
 
-div.card_container {
+.card_container {
   padding: 70px;
   text-decoration: none;
 }
 
-div.action_container {
+.action_container {
   padding: 20px 20px 20px 20px;
   display: flex;
   gap: 20px;
 }
 
-div.card {
-  background-color: rgb(208, 238, 187);
-  padding: 70px;
-  margin-bottom: 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  color: black;
-}
 
-div.card img {
+.card img {
   display: center;
   width: 80%;
   margin: 10px 10px;
 }
 
-div.card ul {
+.card ul {
   margin: 10px 0 10px 30px;
 }
 
@@ -68,46 +78,56 @@ div.card ul {
 
 button.btn {
   border: none;
-  background-color: rgb(217, 133, 240); 
+  background-color: var(--color-purple-button); 
   padding: 10px 15px;
   border-radius: 25px;
   color: rgb(0, 0, 0); 
   text-decoration: none;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  transform: scale(1.1);
 }
 
 button {
   border: none;
-  background-color: rgb(50, 244, 111); 
+  background-color: var(--color-green-button); 
   padding: 5px 5px;
   border-radius: 25px;
   color: rgb(0, 0, 0); 
   text-decoration: none;
+  transition: color 0.3s
+}
+
+button.purple {
+  color: purple;
 }
 
 /***************** FORM *******************/
 
-div.form_container input,
-div.form_container label,
-div.form_container select {
+.form_container input,
+.form_container label,
+.form_container select {
   display: block;
 }
 
-div.form_container input[type='text'],
-div.form_container input[type='number'],
-div.form_container select {
+.form_container input[type='text'],
+.form_container input[type='number'],
+.form_container select {
   border: none;
-  border-bottom: 1px solid rgb(0, 151, 201);
+  border-bottom: 1px solid rgb(13, 101, 138);
   width: 100%;
   margin: 10px 0;
   padding: 5px 0;
 }
 
-div.form_container {
+.form_container {
   padding: 10px 20px;
   margin-top: 20px;
 }
 
-div.checkbox_container {
+.checkbox_container {
   display: flex;
   gap: 10px;
   padding: 10px 0;
@@ -115,11 +135,11 @@ div.checkbox_container {
 
 /***************** SEARCH *****************/
 
-div.search_container {
+.search_container {
   padding: 20px 20px 0 20px;
 }
 
-div.search_container input[type="text"] {
+.search_container input[type="text"] {
   border: none;
   border-bottom: 1px solid lightblue;
   width: 100%;
@@ -136,22 +156,63 @@ ul.nav {
   list-style-type: none;
 }
 
-.nav_link {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: chocolate;
-}
 
-
-div.footer{
-  color: rgb(134, 0, 53);
+.footer{
+  background-color: rgb(134, 0, 53);
 }
 .active {
-  color: lightskyblue;
+  color: rgb(37, 119, 170);
   text-decoration: none;
 }
 
-div.form-container.button{
-  text-decoration: none;
-  color: black;
+
+.card {
+  background-color: rgb(208, 238, 187);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 10px; 
+}
+
+.card-header {
+  padding: 15px;
+  background-color: var(--background-green-header);
+  color: white;
+  text-align: center;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-metadata {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-metadata li {
+  flex: 1 1 45%; /* Ajusta el ancho de los elementos en pantallas más pequeñas */
+  margin: 5px 0;
+}
+
+.card-actions {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 1px;
+  }
 }
